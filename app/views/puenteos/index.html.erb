@@ -1,0 +1,29 @@
+<div class="page-header">
+	<h1>Puenteos</h1>
+
+	<ul class="actions">
+		<li><%= link_to "Nuevo Puenteo", new_puenteo_path, class: "btn btn-success" %></li>
+	</ul>
+
+</div>
+	
+<div class="container">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Numero</th>
+				<th>Actualizado</th>
+			</tr>		
+		</thead>
+		<tbody>
+			<% @puenteo.each do |p| %>
+				<tr>
+					<td><%= link_to p.puenteo_id, p %></td>
+					<td><%= p.updated_at %></td>
+				</tr>
+			<% end %>			
+		</tbody>		
+	</table>
+	
+</div>
+
