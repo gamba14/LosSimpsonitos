@@ -39,6 +39,12 @@ class PuenteosController < ApplicationController
 		end
 	end
 
+	def destroy
+		@puenteo = Puenteo.find(params[:id])
+		@puenteo.destroy
+		redirect_to "/"
+	end
+
 	private
 		def puenteo_params
 			params.require(:puenteo). permit(:puenteo_id, :descripcion)

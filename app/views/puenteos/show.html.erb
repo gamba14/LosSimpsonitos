@@ -2,15 +2,38 @@
 	<h1>Puenteo <%= @puenteo.puenteo_id %></h1>
 	<ul class="actions">
 		<li><%= link_to "Home", puenteos_path, class: "btn btn-primary" %></li>
-		<li><%= link_to "Editar", edit_puenteo_path, class: "btn btn-primary" %></li>		
+		<li><%= link_to "Editar", edit_puenteo_path, class: "btn btn-primary" %></li>
+		<li><%= link_to "Agregar entrada", new_puenteo_bitacora_path(@puenteo), class: "btn btn-primary" %></li>		
 	</ul>
 </div>
 
-<h2>Descripcion</h2>
+
 
 <div class="container">
+	<h2>Descripcion</h2>
 	<p><%= @puenteo.descripcion %></p>
 </div>
 
-<p> Creado: <%= @puenteo.created_at %></p>
-<p> Modificado: <%= @puenteo.updated_at %></p>
+<div class="container">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Accion</th>
+				<th>Fecha</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @puenteo.bitacoras.each do |b| %>
+			<tr>
+				<td><%=link_to b.accion, [@puenteo, b] %></td>
+				<td><%= b.created_at %></td>
+			</tr>
+			<% end %>
+		</tbody>
+		
+	</table>
+</div>
+
+
+

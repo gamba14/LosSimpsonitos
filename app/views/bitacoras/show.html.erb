@@ -1,0 +1,14 @@
+<div id="bitacora">
+	<header>
+		<h1><%= @puenteo.puenteo_id %></h1>
+	</header>
+
+	<header>
+		<h2><%= @bitacora.accion %></h2>
+	</header>
+
+	<%= simple_format(@bitacora.descripcion) %>
+
+</div>
+
+<%= link_to "Volver", puenteo_path %>

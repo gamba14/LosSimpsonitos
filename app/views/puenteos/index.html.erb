@@ -2,7 +2,7 @@
 	<h1>Puenteos</h1>
 
 	<ul class="actions">
-		<li><%= link_to "Nuevo Puenteo", new_puenteo_path, class: "btn btn-success" %></li>
+		<li><%= link_to fa_icon("plus") + "Nuevo Puenteo", new_puenteo_path, class: "btn btn-success" %></li>
 	</ul>
 
 </div>
@@ -12,7 +12,8 @@
 		<thead>
 			<tr>
 				<th>Numero</th>
-				<th>Actualizado</th>
+				<th>Actualizado</th>				
+				<th>ELIMINAR</th>
 			</tr>		
 		</thead>
 		<tbody>
@@ -20,6 +21,8 @@
 				<tr>
 					<td><%= link_to p.puenteo_id, p %></td>
 					<td><%= p.updated_at %></td>
+					<td><%= link_to "Borrar", p, method: :delete,
+					data: {confirm: "¿Seguro desea borrar?"} %></td>
 				</tr>
 			<% end %>			
 		</tbody>		

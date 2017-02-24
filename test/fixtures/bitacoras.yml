@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  accion: MyString
+  descripcion: MyText
+  puenteo: one
+
+two:
+  accion: MyString
+  descripcion: MyText
+  puenteo: two
