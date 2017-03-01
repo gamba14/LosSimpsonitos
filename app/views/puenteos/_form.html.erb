@@ -5,6 +5,8 @@
 	<%= f.input :puenteo_id %>
 
 	<%= f.input :descripcion %>
+
+	<%= f.input :hojapuenteo, as: :file, label: "Adjuntos" %>
 	
 	<%= f.button :submit, "Enviar", class: "btn btn-success" %>
 <% end %>

@@ -26,7 +26,6 @@ class PuenteosController < ApplicationController
 
 	def show
 		@puenteo = Puenteo.find(params[:id])
-
 	end
 
 	def update
@@ -47,7 +46,7 @@ class PuenteosController < ApplicationController
 
 	private
 		def puenteo_params
-			params.require(:puenteo). permit(:puenteo_id, :descripcion)
+			params.require(:puenteo). permit(:puenteo_id, :descripcion, :hojapuenteo)
 		end
 	
 end

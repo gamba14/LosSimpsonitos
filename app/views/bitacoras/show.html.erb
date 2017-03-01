@@ -1,14 +1,31 @@
-<div id="bitacora">
-	<header>
-		<h1><%= @puenteo.puenteo_id %></h1>
-	</header>
-
-	<header>
+<div class="page-header">
+	
+		<h1><u><%="Puenteo: #{@puenteo.puenteo_id}"  %></u></h1>
 		<h2><%= @bitacora.accion %></h2>
-	</header>
 
-	<%= simple_format(@bitacora.descripcion) %>
-
+		<ul class="actions">
+		<li><%= link_to "Volver", puenteo_path(@puenteo) %></li>
+		<li><%= link_to "Borrar", p, method: :delete,
+					data: {confirm: "¿Seguro desea borrar?"} %></li>
+		</ul>
+	
 </div>
 
-<%= link_to "Volver", puenteo_path %>
+<div class="container">
+	<blockquote>
+		<p><%= simple_format(@bitacora.descripcion) %></p>
+	</blockquote>
+	<% if @bitacora.adjunto.present? %>
+		<h4> Adjuntos </h4>
+		<div class="attachment">
+			<p>
+				<%= link_to File.basename(@bitacora.adjunto.url), @bitacora.adjunto.url %>
+				(<%= number_to_human_size(@bitacora.adjunto.size) %>)
+			</p>	
+		</div>
+	<% end %>
+</div>
+
+
+
+

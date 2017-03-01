@@ -53,3 +53,5 @@ gem 'simple_form'
 gem "bootstrap-sass", "~> 3.3"
 
 gem "font-awesome-rails", "~> 4.3"
+
+gem "carrierwave", "~> 0.10.0"

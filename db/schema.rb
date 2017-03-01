@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170224182448) do
+ActiveRecord::Schema.define(version: 20170301191518) do
 
   create_table "bitacoras", force: :cascade do |t|
     t.string   "accion"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170224182448) do
     t.integer  "puenteo_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "adjunto"
     t.index ["puenteo_id"], name: "index_bitacoras_on_puenteo_id"
   end
 
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170224182448) do
     t.datetime "updated_at",  null: false
     t.string   "puenteo_id"
     t.string   "descripcion"
+    t.string   "hojapuenteo"
   end
 
 end

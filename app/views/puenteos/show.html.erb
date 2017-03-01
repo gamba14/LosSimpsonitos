@@ -12,10 +12,20 @@
 <div class="container">
 	<h2>Descripcion</h2>
 	<p><%= @puenteo.descripcion %></p>
+	<% if @puenteo.hojapuenteo.present? %>
+		<h4>Adjuntos</h4>
+		<div class="attachment">
+			<p>
+				<%= link_to File.basename(@puenteo.hojapuenteo.url), @puenteo.hojapuenteo.url %>
+				(<%= number_to_human_size(@puenteo.hojapuenteo.size) %>)
+			</p>	
+		</div>
+	<% end %>
+
 </div>
 
 <div class="container">
-	<table class="table">
+	<table class="table table-hover">
 		<thead>
 			<tr>
 				<th>Accion</th>

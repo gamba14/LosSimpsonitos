@@ -23,6 +23,12 @@ class BitacorasController < ApplicationController
 		
 	end
 
+	def destroy
+		@bitacora = Bitacora.find(params[:id])
+		@bitacora.destroy
+		redirect_to puenteo_path(@puenteo)
+	end
+
 	private
 
 	def set_puenteo
@@ -34,6 +40,6 @@ class BitacorasController < ApplicationController
 	end
 
 	def bitacora_params
-		params.require(:bitacora) .permit(:accion, :descripcion)
+		params.require(:bitacora) .permit(:accion, :descripcion, :adjunto)
 	end
 end
