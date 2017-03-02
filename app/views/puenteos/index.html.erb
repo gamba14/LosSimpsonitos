@@ -20,7 +20,7 @@
 			<% @puenteo.each do |p| %>
 				<tr>
 					<td><%= link_to p.puenteo_id, p %></td>
-					<td><%= p.updated_at %></td>
+					<td><%= p.updated_at.strftime("%v %H:%M:%S") %></td>
 					<td><%= link_to "Borrar", p, method: :delete,
 					data: {confirm: "¿Seguro desea borrar?"} %></td>
 				</tr>
@@ -28,5 +28,10 @@
 		</tbody>		
 	</table>
 	
+</div>
+
+<div id="footer">
+	<% t = Time.now %>
+	<p><%= t.strftime("%v %H:%M:%S") %></p>
 </div>
 

@@ -1,8 +1,12 @@
 <%= simple_form_for([puenteo,bitacora]) do |form| %>
+<div class="container">
+	<%= form.input :accion %>
+	<%= form.input :descripcion %>
+</div>
 
-<%= form.input :accion %>
-<%= form.input :descripcion %>
-<%= form.input :adjunto, as: :file, label: "Adjuntos" %>
+<div id="attachments">
+	<%= form.input :adjunto, as: :file, label: "Adjuntos" %>
+</div>
 
 <%= form.button :submit, class: "btn btn-primary" %>
 
